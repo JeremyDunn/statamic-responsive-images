@@ -71,12 +71,10 @@ class UpdateResponsiveReferences implements ShouldQueue
             return;
         }
 
-        $newValue = $newPath ? "{$container}::{$newPath}" : null;
-
-        $this->getItemsContainingData()->each(function ($item) use ($container, $originalPath, $newValue) {
+        $this->getItemsContainingData()->each(function ($item) use ($container, $originalPath, $newPath) {
             ResponsiveReferenceUpdater::item($item)
                 ->filterByContainer($container)
-                ->updateReferences($container . '::' . $originalPath, $newValue);
+                ->updateReferences($originalPath, $newPath);
         });
     }
 }
