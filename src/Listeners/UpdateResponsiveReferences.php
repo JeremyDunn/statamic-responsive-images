@@ -8,7 +8,7 @@ use Statamic\Events\AssetDeleted;
 use Statamic\Events\AssetSaved;
 use Statamic\Listeners\Concerns\GetsItemsContainingData;
 
-class UpdateResponsiveReferences implements ShouldQueue
+class UpdateResponsiveReferences
 {
     use GetsItemsContainingData;
 
